@@ -1,0 +1,11 @@
+#Simple HTTP Server
+from http.server import SimpleHTTPRequestHandler, HTTPServer
+
+# Define server address and port
+server_address = ('', 8000)
+
+# Create HTTP server instance
+httpd = HTTPServer(server_address, SimpleHTTPRequestHandler)
+
+print("Serving HTTP on port 8000")
+httpd.serve_forever()
