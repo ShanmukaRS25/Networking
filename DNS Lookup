@@ -1,0 +1,9 @@
+## DNS Query
+import socket
+
+host = 'www.example.com'
+
+# Get the IP address for the given host
+ip = socket.gethostbyname(host)
+
+print(f"IP address of {host} is {ip}")
