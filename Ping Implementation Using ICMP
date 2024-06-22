@@ -1,0 +1,16 @@
+##Ping Tool
+import os
+import platform
+import subprocess
+
+def ping(host):
+    # Determine command based on OS
+    param = '-n' if platform.system().lower()=='windows' else '-c'
+    
+    # Build command
+    command = ['ping', param, '4', host]
+    return subprocess.call(command)
+
+host = 'google.com'
+print(f"Pinging {host}")
+ping(host)
