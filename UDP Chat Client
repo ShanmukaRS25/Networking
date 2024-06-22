@@ -1,0 +1,10 @@
+import socket
+
+client_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+server_address = ('localhost', 12000)
+
+while True:
+    message = input("Enter message: ")
+    client_socket.sendto(message.encode(), server_address)
+    modified_message, _ = client_socket.recvfrom(2048)
+    print(f"Received from server: {modified_message.decode()}")
